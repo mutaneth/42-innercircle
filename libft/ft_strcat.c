@@ -6,12 +6,11 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 17:53:45 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/12 21:23:12 by hfalmer          ###   ########.fr       */
+/*   Updated: 2018/12/19 02:00:31 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strcat(char *s1, const char *s2)
 {
@@ -31,10 +30,10 @@ char	*ft_strcat(char *s1, const char *s2)
 	return (s1);
 }
 
-int	main(int ac, char **ag)
+/*int	main(int ac, char **ag)
 {
 //	strcat(ag[2], ag[1]);
 	ft_strcat(ag[2], ag[1]);
 	printf("%s\n", ag[2]);
 	return (0);
-}
+}*/

@@ -6,12 +6,11 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 20:05:52 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/11 22:47:35 by hfalmer          ###   ########.fr       */
+/*   Updated: 2018/12/19 02:01:21 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {
@@ -27,7 +26,7 @@ char	*ft_strcpy(char *dst, const char *src)
 	return (dst);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	const char	sr[4] = "abc";
 	char		ds[2] = "1";
@@ -39,4 +38,4 @@ int	main(void)
 	printf("%s\n", str);
 //	printf("%zu\n", 
 	return (0);
-}
+}*/

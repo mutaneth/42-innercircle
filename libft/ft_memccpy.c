@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy1.c                                      :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 22:13:52 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/18 22:19:28 by hfalmer          ###   ########.fr       */
+/*   Updated: 2018/12/19 01:57:34 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
@@ -33,9 +32,9 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		return (NULL);
 }
 
-int	main(int ac, char **av)
+/*int	main(int ac, char **av)
 {
 	printf("memccpy: %s\n%s\n", memccpy(av[1], av[2], ' ', 2), av[1]);
 	printf("ft_memccpy: %s\n%s\n", ft_memccpy(av[1], av[2], ' ', 2), av[1]);
 	return (0);
-}
+}*/

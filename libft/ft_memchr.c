@@ -6,12 +6,11 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 22:27:34 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/18 22:41:40 by hfalmer          ###   ########.fr       */
+/*   Updated: 2018/12/19 01:58:07 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -30,9 +29,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-int main(int ac, char **av)
+/*int main(int ac, char **av)
 {
 	printf("memchr: %s\n", memchr(av[1], 'r', 4));
 	printf("ft_memchr: %s\n", ft_memchr(av[1], 'r', 4));
 	return (0);
-}
+}*/
