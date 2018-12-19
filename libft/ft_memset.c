@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 00:58:20 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/19 02:01:29 by hfalmer          ###   ########.fr       */
+/*   Updated: 2018/12/19 20:38:43 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return ((void *)res);
 }
-
-/*int	main(int ac, char **av)
-{
-	printf("memset: %s\n", memset(av[1], 2, 5));
-	printf("ft_memset: %s\n", ft_memset(av[1], 2, 5));
-	return (0);
-}*/

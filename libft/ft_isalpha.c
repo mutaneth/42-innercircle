@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 01:37:10 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/19 00:55:54 by hfalmer          ###   ########.fr       */
+/*   Updated: 2018/12/19 20:35:33 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,3 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
-
-/*int main(void)
-{
-	int pep;
-	pep = 0;
-	printf("isalpha: %d\n", isalpha(pep));
-	printf("ft_isalpha: %d\n", ft_isalpha(pep));
-	return (0);
-}*/

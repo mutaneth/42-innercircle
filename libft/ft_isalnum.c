@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 02:05:55 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/19 00:54:58 by hfalmer          ###   ########.fr       */
+/*   Updated: 2018/12/19 20:35:13 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,3 @@ int	ft_isalnum(int c)
 	else
 		return (0);
 }
-
-/*int main()
-{
-	int pep;
-	pep = 123;
-	printf("isalnum: %d\n", isalnum(pep));
-	printf("ft_isalnum: %d\n", ft_isalnum(pep));
-	return (0);
-}*/

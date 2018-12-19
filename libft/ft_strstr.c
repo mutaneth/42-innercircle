@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 16:52:47 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/19 02:03:18 by hfalmer          ###   ########.fr       */
+/*   Updated: 2018/12/19 20:42:10 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,3 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	}
 	return (NULL);
 }
-
-/*int		main(int ac, char **av)
-{
-	printf("strstr: %s\n", strstr(av[1], av[2]));
-	printf("ft_strstr: %s\n", ft_strstr(av[1], av[2]));
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 18:21:23 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/19 00:55:06 by hfalmer          ###   ########.fr       */
+/*   Updated: 2018/12/19 20:34:18 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,11 @@ int		ft_atoi(const char *str)
 			k = -1;
 		}
 		while (str[i] <= '9' && str[i] >= '0')
-			{
-				nb = nb * 10 + (str[i] - '0');
-				i++;
-			}
-		break;
+		{
+			nb = nb * 10 + (str[i] - '0');
+			i++;
+		}
+		break ;
 	}
 	return ((int)(nb * k));
 }
-
-/*int main(int ac, char **av)
-{
-	printf("ft_atoi: %d\n", ft_atoi(av[1]));
-	printf("atoi: %d\n", atoi(av[1]));
-	return (0);
-}*/

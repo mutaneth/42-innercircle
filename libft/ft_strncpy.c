@@ -5,41 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/12 21:28:36 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/12 21:40:35 by hfalmer          ###   ########.fr       */
+/*   Created: 2018/12/11 22:49:13 by hfalmer           #+#    #+#             */
+/*   Updated: 2018/12/19 20:41:44 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	size_t	i;
-	size_t	j;
 
 	i = 0;
-	while (s1[i])
-		i++;
-	j = 0;
-	while (s2[j] && j < n)
+	while (i < len && src[i])
 	{
-		s1[i+j] = s2[j];
-		j++;
+		dst[i] = src[i];
+		i++;
 	}
-	s1[i+j] = '\0';
-	return (s1);
-}
-
-int	main(int ac, char **ag)
-{
-//	char *t1[10];
-//	char *t2[10];
-//	t1 = strncat(ag[2], ag[1]);
-//	t2 = ft_strncat(ag[2], ag[1]);
-//	strncat(ag[2], ag[1], 2);
-	ft_strncat(ag[2], ag[1], 2);
-	printf("%s\n", ag[2]);
-//	printf("ft_strncat: %s\n", t2);
-	return (0);
+	while (i < len && dst[i])
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	return (dst);
 }

@@ -1,15 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/18 01:13:46 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/18 01:34:21 by hfalmer          ###   ########.fr       */
+/*   Created: 2018/12/17 17:57:23 by hfalmer           #+#    #+#             */
+/*   Updated: 2018/12/19 20:49:02 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	strlcat(char *dst, const char *src, size_t size)
+#include "libft.h"
+
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	
+	size_t	i;
+
+	i = 0;
+	while (s1[i] && s2[i] && i < n)
+	{
+		if (s1[i] == s2[i])
+			i++;
+		else
+			break ;
+	}
+	return (s1[i] - s2[i]);
+}
