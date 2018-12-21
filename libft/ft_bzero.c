@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 00:08:14 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/19 20:05:35 by hfalmer          ###   ########.fr       */
+/*   Updated: 2018/12/20 00:11:17 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 
 	i = 0;
 	str = (unsigned char *)s;
-	while (i < n && str)
+	while (i < n)
 	{
 		str[i] = '\0';
 		i++;

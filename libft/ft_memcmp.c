@@ -6,33 +6,27 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 22:45:56 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/19 20:47:37 by hfalmer          ###   ########.fr       */
+/*   Updated: 2018/12/21 03:01:15 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_my_strcmp(const char *s1, const char *s2, size_t n)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t			i;
 
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	i = 0;
-	while (i < n && s1[i] && s2[i])
+	while (i < (n - 1))
 	{
-		if (s1[i] == s2[i])
+		if ((unsigned int)str1[i] == (unsigned int)str2[i])
 			i++;
 		else
 			break ;
 	}
-	return (s1[i] - s2[i]);
-}
-
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
-{
-	const char	*str1;
-	const char	*str2;
-
-	str1 = (const char *)s1;
-	str2 = (const char *)s2;
-	return (ft_my_strcmp(s1, s2, n));
+	return ((unsigned int)(str1[i] - str2[i]));
 }
