@@ -6,7 +6,7 @@
 #    By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/19 00:12:27 by hfalmer           #+#    #+#              #
-#    Updated: 2018/12/19 20:19:57 by hfalmer          ###   ########.fr        #
+#    Updated: 2018/12/26 02:23:00 by hfalmer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,20 @@ SRC = 	ft_memset.c\
 		ft_isascii.c\
 		ft_isprint.c\
 		ft_toupper.c\
-		ft_tolower.c
+		ft_tolower.c\
+		ft_memmove.c\
+		ft_strchr.c\
+		ft_strrchr.c\
+		ft_strnstr.c\
+		ft_strlcat.c\
+		ft_strncat.c\
+		ft_memalloc.c\
+		ft_memdel.c\
+		ft_strnew.c\
+		ft_strdel.c\
+		ft_strclr.c\
+		ft_striter.c\
+		ft_strmap.c
 INC = -I ./
 OUT = $(SRC:.c=.o)
 
