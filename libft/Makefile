@@ -6,7 +6,7 @@
 #    By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/19 00:12:27 by hfalmer           #+#    #+#              #
-#    Updated: 2018/12/26 02:23:00 by hfalmer          ###   ########.fr        #
+#    Updated: 2018/12/26 22:34:15 by hfalmer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,11 @@ SRC = 	ft_memset.c\
 		ft_strdel.c\
 		ft_strclr.c\
 		ft_striter.c\
-		ft_strmap.c
+		ft_strmap.c\
+		ft_strequ.c\
+		ft_strsub.c\
+		ft_strjoin.c\
+		ft_strtrim.c
 INC = -I ./
 OUT = $(SRC:.c=.o)
 

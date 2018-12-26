@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/26 02:17:42 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/26 19:24:21 by hfalmer          ###   ########.fr       */
+/*   Created: 2018/12/26 21:33:47 by hfalmer           #+#    #+#             */
+/*   Updated: 2018/12/26 22:46:04 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_strtrim(char const *s)
 {
 	size_t	i;
-	size_t	len;
+	size_t	j;
 	char	*res;
 
 	i = 0;
-	len = (size_t)ft_strlen(s);
-	if (!(res = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	while (i <= len)
+	j = 0;
+	if (!(res = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+	while (i <= ft_strlen(s))
 	{
-		res[i] = f(s[i]);
-		i++;
+		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+			i++;
+		else
+		{
+			while (j <= ft_strlen(s))
+			{
+				res[j] = s[i];
+				i++;
+				j++;
+			}
+		}
 	}
-	return (res);
+	res[j] = '\0';
+	return ((char *)res);
 }

@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/26 02:17:42 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/26 19:24:21 by hfalmer          ###   ########.fr       */
+/*   Created: 2018/12/26 21:12:29 by hfalmer           #+#    #+#             */
+/*   Updated: 2018/12/26 21:31:09 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
-	size_t	len;
+	size_t	j;
 	char	*res;
 
-	i = 0;
-	len = (size_t)ft_strlen(s);
-	if (!(res = (char *)malloc(sizeof(char) * (len + 1))))
+i = ft_strlen(s1) + ft_strlen(s2);
+	if (!(res = (char *)malloc(sizeof(char) * i)))
 		return (NULL);
-	while (i <= len)
+	i = 0;
+	while (i < ft_strlen(s1))
 	{
-		res[i] = f(s[i]);
+		res[i] = s1[i];
 		i++;
 	}
-	return (res);
+	j = 0;
+	while (j < ft_strlen(s2))
+	{
+		res[i + j] = s2[j];
+		j++;
+	}
+	res[i+j] = '\0';
+	return ((char *)res);
 }
