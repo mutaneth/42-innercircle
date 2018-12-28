@@ -1,41 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/26 21:33:47 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/27 20:37:38 by hfalmer          ###   ########.fr       */
+/*   Created: 2018/12/28 00:05:13 by hfalmer           #+#    #+#             */
+/*   Updated: 2018/12/28 00:13:59 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+int	ft_isspace(char c)
 {
-	size_t	i;
-	size_t	j;
-	char	*res;
-
-	i = 0;
-	j = 0;
-	if (!(res = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
-		return (NULL);
-	while (i <= ft_strlen(s))
-	{
-		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-			i++;
-		else
-		{
-			while (j <= ft_strlen(s))
-			{
-				res[j] = s[i];
-				i++;
-				j++;
-			}
-		}
-	}
-	res[j] = '\0';
-	return ((char *)res);
+	if (c == ' ' || c == '\r' || c == '\n' || c == '\t' || c == '\f'
+			|| c == '\v')
+		return (1);
+	return (0);
 }

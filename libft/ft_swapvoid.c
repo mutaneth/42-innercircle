@@ -1,41 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_swapvoid.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/26 21:33:47 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/27 20:37:38 by hfalmer          ###   ########.fr       */
+/*   Created: 2018/12/28 20:37:05 by hfalmer           #+#    #+#             */
+/*   Updated: 2018/12/28 21:11:11 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+void	ft_swapvoid(void **s1, void **s2)
 {
-	size_t	i;
-	size_t	j;
-	char	*res;
+	void	*tmp;
 
-	i = 0;
-	j = 0;
-	if (!(res = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
-		return (NULL);
-	while (i <= ft_strlen(s))
-	{
-		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-			i++;
-		else
-		{
-			while (j <= ft_strlen(s))
-			{
-				res[j] = s[i];
-				i++;
-				j++;
-			}
-		}
-	}
-	res[j] = '\0';
-	return ((char *)res);
+	tmp = *s1;
+	*s1 = *s2;
+	*s2 = tmp;
 }

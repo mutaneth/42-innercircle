@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 18:21:23 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/21 03:51:47 by hfalmer          ###   ########.fr       */
+/*   Updated: 2018/12/27 23:57:38 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,25 @@
 
 int		ft_atoi(const char *str)
 {
-	long long	i;
-	long long	nb;
-	int			k;
+	unsigned long	i;
+	unsigned long	nb;
+	int				k;
+	char			*s;
 
 	i = 0;
 	nb = 0;
 	k = 1;
-	while (str[i])
+	s = (char *)str;
+	while (s[i])
 	{
-		while (str[i] == ' ' || str[i] == '\r' || str[i] == '\n'
-				|| str[i] == '\t' || str[i] == '\f' || str[i] == '\v')
+		while (s[i] == ' ' || s[i] == '\r' || s[i] == '\n'
+				|| s[i] == '\t' || s[i] == '\f' || s[i] == '\v')
 			i++;
-		if (str[i] == '+' || str[i] == '-')
-			k *= str[i++] == '-' ? -1 : 1;
-		while (str[i] <= '9' && str[i] >= '0')
+		if (s[i] == '+' || s[i] == '-')
+			k *= s[i++] == '-' ? -1 : 1;
+		while (ft_isdigit(s[i]))
 		{
-			nb = nb * 10 + (str[i] - '0');
+			nb = nb * 10 + (s[i] - '0');
 			i++;
 		}
 		break ;
