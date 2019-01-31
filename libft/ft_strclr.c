@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/26 01:32:36 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/27 21:49:45 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/01/31 23:37:57 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,15 @@
 void	ft_strclr(char *s)
 {
 	size_t	i;
+	size_t	l;
 
 	if (!s)
 		return ;
 	i = 0;
-	while (i < ft_strlen(s))
+	l = ft_strlen(s);
+	while (i < l)
 	{
 		s[i] = '\0';
 		i++;
 	}
-	s[i] = '\0';
 }
