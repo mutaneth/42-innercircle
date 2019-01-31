@@ -6,13 +6,13 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 17:25:58 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/21 19:14:42 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/01/29 00:28:28 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned int			*d;
 	const unsigned int		*s;

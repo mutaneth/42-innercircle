@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 20:44:49 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/28 21:11:07 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/01/29 06:32:31 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,10 @@ int					ft_tolower(int c);
 int					ft_toupper(int c);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
-char				*ft_strnstr(const char *haystack, const char *needle,
-						size_t len);
+char				*ft_strnstr(const char *hay, const char *nee, size_t len);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
+int					ft_memcmp(const void *s1, const void *s2, size_t n);
+void				*ft_memmove(void *dst, const void *src, size_t len);
 
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
@@ -72,6 +73,12 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+char				*ft_itoa(int n);
+
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
 int					ft_isspace(char c);
 void				ft_swapvoid(void **s1, void **s2);

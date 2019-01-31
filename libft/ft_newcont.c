@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_newcont.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/26 01:18:45 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/01/29 00:30:17 by hfalmer          ###   ########.fr       */
+/*   Created: 2019/01/08 21:04:50 by hfalmer           #+#    #+#             */
+/*   Updated: 2019/01/08 21:09:07 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_strdel(char **as)
+t_list	*ft_newcont(void *data)
 {
-/* 	size_t	i;*/
-	if (!*as)
-		return ;
-	free(as);/*
-	i = 0;
-	while (as)
-	{
-		*as[i] = '\0';
-		i++;
-	}*/
+	t_list *tmp;
+
+	tmp = (t_list*)malloc(sizeof(t_list));
+	if (!tmp)
+		return (NULL);
+	tmp->data = data;
+	tmp->next = NULL;
+	return (tmp);
 }

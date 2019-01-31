@@ -6,13 +6,13 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 23:16:27 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/27 21:38:38 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/01/29 00:29:39 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memalloc(size_t size)
+void	*ft_memalloc(size_t size)
 {
 	char	*str;
 	size_t	i;
