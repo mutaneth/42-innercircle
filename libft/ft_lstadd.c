@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 21:01:02 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/01/28 23:59:22 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/02/07 22:48:56 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,8 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	t_list tmp;
-
-	tmp = ft_newcont(new);
-	if (!(*alst))
-	{
-		*alst = tmp;
+	if (!new || !alst)
 		return ;
-	}
-	tmp->next = *alst;
-	*alst = tmp;
+	new->next = *alst;
+	*alst = new;
 }

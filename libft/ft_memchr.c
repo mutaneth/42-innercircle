@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 22:27:34 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/20 03:07:02 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/02/07 20:56:37 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-/*#include <stdio.h>
-
-int main()
-{
-*/
