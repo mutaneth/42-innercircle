@@ -5,37 +5,55 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/26 21:33:47 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/27 20:37:38 by hfalmer          ###   ########.fr       */
+/*   Created: 2019/02/10 05:59:46 by hfalmer           #+#    #+#             */
+/*   Updated: 2019/02/10 07:59:17 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+size_t	ft_trim_i(char *s)
+{
+	size_t i;
+
+	i = 0;
+	while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
+		i++;
+	return (i);
+}
+
+size_t	ft_trim_j(char *s)
+{
+	size_t j;
+
+	j = ft_strlen(s) - 1;
+	while ((j > 0) && (s[j] == ' ' || s[j] == '\n' || s[j] == '\t'))
+		j--;
+	return (j);
+}
+
 char	*ft_strtrim(char const *s)
 {
 	size_t	i;
 	size_t	j;
+	size_t	k;
+	size_t	len;
 	char	*res;
 
-	i = 0;
-	j = 0;
-	if (!(res = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+	i = ft_trim_i((char *)s);
+	j = ft_trim_j((char *)s);
+	len = j - i + 1;
+	if (i > j)
+		return ("\0");
+	if (!(res = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	while (i <= ft_strlen(s))
+	k = 0;
+	while (s[i] && i <= j)
 	{
-		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-			i++;
-		else
-		{
-			while (j <= ft_strlen(s))
-			{
-				res[j] = s[i];
-				i++;
-				j++;
-			}
-		}
+		res[k] = s[i];
+		k++;
+		i++;
 	}
-	res[j] = '\0';
-	return ((char *)res);
+	res[k] = '\0';
+	return (res);
 }

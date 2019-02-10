@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 17:25:58 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/01/29 00:28:28 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/02/10 05:31:14 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned int			*d;
-	const unsigned int		*s;
+	unsigned char			*d;
+	const unsigned char		*s;
 	size_t					i;
 
 	i = 0;
-	d = (unsigned int *)dst;
-	s = (const unsigned int *)src;
+	d = (unsigned char *)dst;
+	s = (const unsigned char *)src;
 	while (i < (len - 1))
 	{
-		if (s < d)
+		if (s > d)
 			d[i] = s[i];
-		else if (s > d)
+		else if (s < d)
 			d[i] = s[len - i];
 		else
 			break ;
@@ -36,14 +36,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 /*
 #include <string.h>
 #include <stdio.h>
-int main()
+char main()
 {
 	unsigned char src[10] = "1234567890";
-	printf ("src old: %s\n", src);
-	printf ("ft src old: %s\n", src);
+	prcharf ("src old: %s\n", src);
+	prcharf ("ft src old: %s\n", src);
 	memmove (&src[4], &src[3], 3);
 	ft_memmove (&src[4], &src[3], 3);
-	printf ("src new: %s\n", src);
-	printf ("ft src new: %s\n", src);
+	prcharf ("src new: %s\n", src);
+	prcharf ("ft src new: %s\n", src);
 	return (0);
 }*/
