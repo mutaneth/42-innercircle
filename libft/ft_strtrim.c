@@ -6,13 +6,13 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/10 05:59:46 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/02/10 07:59:17 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/02/11 22:38:16 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_trim_i(char *s)
+static size_t	ft_trim_i(char *s)
 {
 	size_t i;
 
@@ -22,7 +22,7 @@ size_t	ft_trim_i(char *s)
 	return (i);
 }
 
-size_t	ft_trim_j(char *s)
+static size_t	ft_trim_j(char *s)
 {
 	size_t j;
 
@@ -32,7 +32,7 @@ size_t	ft_trim_j(char *s)
 	return (j);
 }
 
-char	*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
 	size_t	i;
 	size_t	j;

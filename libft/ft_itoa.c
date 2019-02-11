@@ -6,13 +6,13 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 05:52:33 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/01/29 09:11:47 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/02/11 22:29:16 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_sizeofint(int n)
+static int	ft_sizeofint(int n)
 {
 	int i;
 
@@ -32,7 +32,7 @@ int		ft_sizeofint(int n)
 	return (i);
 }
 
-char	*ft_mallocsign(int n)
+static char	*ft_mallocsign(int n)
 {
 	char	*str;
 	int		size;
@@ -44,7 +44,7 @@ char	*ft_mallocsign(int n)
 	return (str);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int		size;
 	char	*res;

@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 20:44:49 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/02/10 04:31:02 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/02/11 23:21:28 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 char				*ft_itoa(int n);
+void				 ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
@@ -83,6 +84,6 @@ void				ft_lstadd(t_list **alst, t_list *new);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 
 int					ft_isspace(char c);
-void				ft_swapvoid(void **s1, void **s2);
+void				ft_memswap(void **str1, void **str2, size_t len);
 
 #endif
