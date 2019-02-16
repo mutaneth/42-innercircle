@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/26 21:12:29 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/02/16 06:53:01 by hfalmer          ###   ########.fr       */
+/*   Created: 2018/12/26 19:09:18 by hfalmer           #+#    #+#             */
+/*   Updated: 2019/02/16 01:53:30 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
 	size_t	i;
 	size_t	j;
-	char	*res;
 
-	if (!s1 || !s2)
-		return (NULL);
-	i = ft_strlen(s1) + ft_strlen(s2);
-	if (!(res = (char *)malloc(sizeof(char) * i)))
-		return (NULL);
 	i = 0;
-	while (i < ft_strlen(s1))
-	{
-		res[i] = s1[i];
-		i++;
-	}
 	j = 0;
-	while (j < ft_strlen(s2))
+	if (!s1 || !s2)
+		return (0);
+	if ((s1 == '\0' && s2 == '\0') || !n)
+		return (1);
+	if (s1 && s2)
 	{
-		res[i + j] = s2[j];
-		j++;
+		while (i != n || j != n)
+		{
+			if (s1[i] != s2[j])
+				return (0);
+			i++;
+			j++;
+		}
+		return (1);
 	}
-	res[i + j] = '\0';
-	return ((char *)res);
+	return (0);
 }

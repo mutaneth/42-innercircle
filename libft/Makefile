@@ -6,7 +6,7 @@
 #    By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/19 00:12:27 by hfalmer           #+#    #+#              #
-#    Updated: 2019/02/11 23:21:02 by hfalmer          ###   ########.fr        #
+#    Updated: 2019/02/16 06:13:22 by hfalmer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,9 @@ SRC = 	ft_memset.c\
 		ft_lstnew.c\
 		ft_itoa.c\
 		ft_memswap.c\
-		ft_striteri.c
+		ft_striteri.c\
+		ft_strmapi.c\
+		ft_strnequ.c\
 
 INC = -I ./
 OUT = $(SRC:.c=.o)

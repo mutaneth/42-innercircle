@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/26 21:12:29 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/02/16 06:53:01 by hfalmer          ###   ########.fr       */
+/*   Created: 2019/02/16 02:05:50 by hfalmer           #+#    #+#             */
+/*   Updated: 2019/02/16 06:10:33 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	size_t	i;
-	size_t	j;
-	char	*res;
+//static void ft_freelst
+//free tmp=lst
 
-	if (!s1 || !s2)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+{
+	t_list *nlst;
+	t_list *tmp;
+	t_list *res;
+
+	tmp = lst;
+	if (!lst || !f)
 		return (NULL);
-	i = ft_strlen(s1) + ft_strlen(s2);
-	if (!(res = (char *)malloc(sizeof(char) * i)))
-		return (NULL);
-	i = 0;
-	while (i < ft_strlen(s1))
+	while (lst->next)
 	{
-		res[i] = s1[i];
-		i++;
+		if (!(nlst = ft_lstnew(tmp->content, tmp->content_size)))
+		{
+//			ft_freelst(nlst)
+			return (NULL);
+		}
+		nlist = f(tmp);
 	}
-	j = 0;
-	while (j < ft_strlen(s2))
-	{
-		res[i + j] = s2[j];
-		j++;
-	}
-	res[i + j] = '\0';
-	return ((char *)res);
+	return (res);
 }

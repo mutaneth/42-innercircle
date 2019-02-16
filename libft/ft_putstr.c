@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 02:45:57 by hfalmer           #+#    #+#             */
-/*   Updated: 2018/12/27 02:52:13 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/02/16 06:56:19 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr(char const *s)
 {
 	size_t	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (i < ft_strlen(s))
 	{
