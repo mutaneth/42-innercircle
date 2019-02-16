@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 20:44:49 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/02/16 02:28:52 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/02/16 07:49:53 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 char				*ft_itoa(int n);
-void				 ft_striteri(char *s, void (*f)(unsigned int, char *));
+void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 
