@@ -5,33 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/16 02:05:50 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/02/16 06:10:33 by hfalmer          ###   ########.fr       */
+/*   Created: 2019/02/18 16:41:52 by hfalmer           #+#    #+#             */
+/*   Updated: 2019/02/18 17:26:54 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//static void ft_freelst
-//free tmp=lst
+void	ft_freelst(t_list **tmp)
+{
+	t_list *lst;
+	t_list *t;
+
+	lst = *tmp;
+	while (lst)
+	{
+		if (lst->content)
+			free(lst->content);
+		t = lst;
+		lst = lst->next;
+		free(t);
+	}
+	free(*tmp);
+}
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list *nlst;
-	t_list *tmp;
 	t_list *res;
+	t_list *tmp;
 
-	tmp = lst;
 	if (!lst || !f)
 		return (NULL);
-	while (lst->next)
+	res = f(lst);
+	tmp = res;
+	lst = lst->next;
+	while (lst)
 	{
-		if (!(nlst = ft_lstnew(tmp->content, tmp->content_size)))
-		{
-//			ft_freelst(nlst)
-			return (NULL);
-		}
-		nlist = f(tmp);
+		if (!(tmp->next = f(lst)))
+			ft_freelst(&tmp);
+		tmp = tmp->next;
+		lst = lst->next;
 	}
 	return (res);
 }
