@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 20:44:49 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/02/16 07:49:53 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/02/19 03:38:45 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void				ft_strdel(char **as);
 void				ft_strclr(char *s);
 void				ft_striter(char	*s, void (*f)(char *));
 char				*ft_strmap(char const *s, char (*f)(char));
-int					ft_strequ(char const *s1, char const *s2);
+int					ft_strequ(char const *str1, char const *str2);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *c);
@@ -77,6 +77,7 @@ char				*ft_itoa(int n);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
+char				**ft_strsplit(char const *str, char w);
 
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));

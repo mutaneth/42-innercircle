@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 03:05:15 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/02/18 18:38:10 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/02/19 03:39:52 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,9 @@ void	ft_putnbr(int n)
 	}
 	ft_putchar(n + '0');
 }
+/* 
+int main(int c, char **v)
+{
+	ft_putnbr(atoi(v[1]));
+	return (0);
+}*/
