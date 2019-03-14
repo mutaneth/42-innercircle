@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 20:44:49 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/02/19 03:38:45 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/03/15 00:31:24 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int					ft_isspace(char c);
 void				ft_memswap(void **str1, void **str2, size_t len);
+char				*ft_free(char ***s);
+void				ft_freelst(t_list **tmp);
 
 #endif

@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_ndcount.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/18 16:41:52 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/03/15 00:31:47 by hfalmer          ###   ########.fr       */
+/*   Created: 2019/03/15 01:26:55 by hfalmer           #+#    #+#             */
+/*   Updated: 2019/03/15 01:45:58 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+int	ft_ndcount(t_list *lst)
 {
-	t_list *res;
-	t_list *tmp;
+	int count;
 
-	if (!lst || !f)
-		return (NULL);
-	res = f(lst);
-	tmp = res;
-	lst = lst->next;
-	while (lst)
+	if (!lst)
+		return (0);
+	count = 1;
+	while (lst->next)
 	{
-		if (!(tmp->next = f(lst)))
-			ft_freelst(&tmp);
-		tmp = tmp->next;
+		count++;
 		lst = lst->next;
 	}
-	return (res);
+	return (count);
 }

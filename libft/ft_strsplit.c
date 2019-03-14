@@ -3,127 +3,110 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 05:29:13 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/02/18 23:29:09 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/03/15 02:33:01 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//#include <stdio.h>
-int		ft_word_len(char *str, char w)
+static int		ft_word_len(char const *str, char w)
 {
-	int	wlen;
+	int	len;
 	int i;
 
 	i = 0;
-	wlen = 0;
-	while (str[i] && str[i] != w)
+	len = 0;
+	while (str[i])
 	{
-			i++;
-			wlen++;
+		if (str[i] != w)
+		{
+			while (str[i] != w && str[i])
+			{
+				i++;
+				len++;
+			}
+			return (len);
+		}
+		else
+		{
+			while (str[i] == w)
+				i++;
+		}
 	}
-//		printf("	from w_l, len = %d", wlen);
-	return (wlen);
+	return (len);
 }
 
-int     ft_word_count(char *str, char w)
+static int		ft_word_count(char const *str, char w)
 {
 	int i;
 	int wcount;
 
 	i = 0;
 	wcount = 0;
-	while (str[i])
+	while (str[i] != '\0')
 	{
-		while (str[i] && str[i] == w)
+		if (str[i] != w)
+		{
+			wcount++;
+			while (str[i] != w && str[i] != '\0')
+			{
+				i++;
+			}
+		}
+		if (str[i] == '\0')
+			break ;
+		else
 			i++;
-		wcount++;
-//		printf("from w_c;i = %d, w_l = %d\n", i, ft_word_len(str + i, w));
-		i += ft_word_len(str + i, w);
 	}
 	return (wcount);
 }
 
-char	*ft_word_fill(char *str, char w)
+static char		*ft_word_fill(char const *str, char *filled, char w)
 {
-	char	*res;
-	int		wlen;
+	int		l;
 	int		i;
 
 	i = 0;
-	while (str && *str == w)
-		str++;
-	wlen = ft_word_len(str, w);
-	if (!(res = (char*)malloc(sizeof(char) * (wlen + 1))))
-		return (NULL);
-	while (i < wlen)
-	{
-		res[i] = str[i];
+	l = 0;
+	while (str[i] == w)
 		i++;
+	while (str[i] && str[i] != w)
+	{
+		filled[l] = str[i];
+		i++;
+		l++;
 	}
-	res[i] = '\0';
-//	printf("return from w_f: %s\n", res);
-	return (res);
+	filled[l] = '\0';
+	return (filled);
 }
 
-char	**ft_strsplit(char const *str, char w)
+char			**ft_strsplit(char const *s, char w)
 {
 	char	**res;
-	char	*s;
-	int		wcount;
+	int		len;
 	int		i;
+	int		wi;
 
-	s = (char *)str;
-	i = 0;
-	wcount = ft_word_count(s, w);
-//	printf("w_c(from split): %d\n", wcount);
-	if (!(res = (char **)malloc(sizeof(char) * (wcount + 1))))
+	i = -1;
+	wi = 0;
+	if (!s)
 		return (NULL);
-	while (i < wcount)
+	if (!(res = (char **)malloc(sizeof(char *) * (ft_word_count(s, w) + 1))))
+		return (NULL);
+	while (++i < ft_word_count(s, w))
 	{
-		if (!(res[i] = ft_word_fill(s, w)))
-		{
-//			printf("QQQQQQQQQQQQQQQQQQQQQQQQ");
-			while (res && *res)
-			{
-				free(*res);
-				res++;
-			}
-			return (NULL);
-		}
-//		printf("res[%d] after filled = %s|\n", i, res[i]);
-		i++;
-//		printf("	from split s before = %s|\n", s);
-		s = s + ft_word_len(s, w);
-		while (s && *s == w)
-			s++;
-//		printf("	from split s after = %s|\n", s);
+		while (s[wi] == w)
+			wi++;
+		len = ft_word_len(&s[wi], w);
+		res[i] = (char *)malloc(sizeof(char) * (len + 1));
+		if (!res[i])
+			ft_free(&res);
+		ft_word_fill(&s[wi], res[i], w);
+		wi += len;
 	}
-//	printf("res[0] ggggg = %s|\n", res[0]);
-//	printf("res[1] ggggg = %s|\n", res[1]);
-//	printf("res[2] ggggg = %s|\n", res[2]);
-	res[wcount] = NULL;
-//	printf("res[0] ggggg = %s|\n", res[0]);
-//	printf("res[1] ggggg = %s|\n", res[1]);
-//	printf("res[2] ggggg = %s|\n", res[2]);
+	res[i] = NULL;
 	return (res);
 }
-
-/*int main(int c, char **v)
-{
-	char **check;
-	check = ft_strsplit(v[1], v[2][0]);
-	int i = 0;
-	printf("%s\n", check[0]);
-	printf("%s\n", check[1]);
-	//while (check[i] && check[i][0])
-//	{
-//		printf("%s\n", check[i]);
-//		i++;
-//	}
-	printf("%d", i);
-	return (0);
-}*/
