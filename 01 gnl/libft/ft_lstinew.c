@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstinew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 20:19:28 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/04/01 21:17:24 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/04/24 18:22:57 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_lsti	*ft_lstinew(void const *cont, size_t cont_size, int index)
+t_lsti	*ft_lstinew(void *cont, size_t cont_size, int index)
 {
 	t_lsti	*nlst;
 

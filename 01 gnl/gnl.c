@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   gnl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/24 18:10:27 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/04/24 20:25:48 by hfalmer          ###   ########.fr       */
+/*   Created: 2019/03/29 19:53:18 by hfalmer           #+#    #+#             */
+/*   Updated: 2019/04/24 18:44:42 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,37 +41,36 @@ static t_lsti	*fd_find(t_lsti *lst, int fd)
 	}
 }
 
-static void		*eat_start(void *str, )
+static char	*gnl(t_lsti *lst)
 {
-	void	*res;
-	size_t	i;
-
-	i = 0;
-	while ((char*)str++ != "\n" || (char*)str++ != EOF)
-		i++;
-	res = ft_memalloc(i);
-
-	return(ft_memccpy(res, str, ));
+	*tmpL = *lst;
+	if (\n || EOF)
+		*tmpS = strrjoin (tmpL.cont till !\n || EOF)
+	else
+		while (!ft_strchr(tmpL.cont, \n) || !ft_strchr(tmpL, EOF))
+			*tmpS = strjoin(tmpL.cont) + free_cont;
+			read;
+	return tmpS;
 }
 
- int	get_next_line(int const fd, char **line)
- {
-	static	t_lsti	*lst;
-	char	buf[BUFF_SIZE];
-	t_lsti	*tmpL;
-	int		r;
+int	 get_next_line(int const fd, char **line)
+{
+	static t_lsti	*lst;
+	char			buf[BUFF_SIZE];
+	t_lsti			*tmpL;
 
 	if (fd < 0 || read(fd, &buf, 0) < 0 || !line || BUFF_SIZE < 1)
 		return (-1);
-	tmpL = lst;
-	if (!lst && (r = read(fd, &buf, BUFF_SIZE)))
-		ft_lstinew(buf, BUFF_SIZE, fd);
-	if (!fd_check(lst, fd) && (r = read(fd, &buf, BUFF_SIZE)))
-		ft_lstiadd(&lst, ft_lstinew(buf, BUFF_SIZE, fd));
-	tmpL = fd_find(lst, fd);
-	if ((ft_memchr(tmpL->content, 10, BUFF_SIZE)) || (ft_memchr(tmpL->content, -1, BUFF_SIZE)))
-		{
-			ft_memcpy((void **)line, tmpL->content, BUFF_SIZE)
-			eat_start
-		}
- }
+	(!lst ? lstinew || !fd_check ? lstiadd)
+		tmpL = fd_find (lst, fd)
+			/n || EOF > **line
+			eat_cont_start + free;
+				return 1
+			else while ((i = read(fd, &buf, BUFF_SIZE)))
+				memjoin (tmpL->content, buf)
+				 if (/n || EOF) .. (1)
+		*lst->next = lstnew(null, 0, fd);
+		*line = gnl(lst(fd_check));
+		return (1);
+	return (0);
+}
