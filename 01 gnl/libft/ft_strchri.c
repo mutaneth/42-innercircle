@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lsticount.c                                     :+:      :+:    :+:   */
+/*   ft_strchri.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/15 01:26:55 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/04/01 19:30:05 by hfalmer          ###   ########.fr       */
+/*   Created: 2019/04/29 20:49:59 by hfalmer           #+#    #+#             */
+/*   Updated: 2019/04/30 02:03:25 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lsticount(t_lsti *lst)
+int	ft_strchri(const char *s, int c)
 {
-	int count;
+	size_t	i;
 
-	if (!lst)
-		return (0);
-	count = 1;
-	while (lst->next)
+	if (c == '\0')
+		return (ft_strlen(s));
+	i = 0;
+	while ((unsigned char)s[i])
 	{
-		count++;
-		lst = lst->next;
+		if ((unsigned char)s[i] == (unsigned char)c)
+			return (i);
+		else
+			i++;
 	}
-	return (count);
+	return (0);
 }

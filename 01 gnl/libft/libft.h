@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 20:44:49 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/04/01 19:59:55 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/04/30 02:16:08 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,19 +93,21 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstadd(t_list **alst, t_list *new);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-t_lsti				*ft_lstinew(void const *cont, size_t cont_size, int index);
+t_lsti				*ft_lstinew(void *cont, size_t cont_size, int index);
 t_lsti				*ft_lstimap(t_lsti *lst, t_lsti *(*f)(t_lsti *elem));
 void				ft_lstidel(t_lsti **alst, void (*del)(void *, size_t));
-void                ft_lstidelone(t_lsti **alst, void (*del)(void *, size_t));
-void                ft_lstiiter(t_lsti *lst, void (*f)(t_lsti *elem));
-void                ft_lstiadd(t_lsti **alst, t_lsti *new);
+void				ft_lstidelone(t_lsti **alst, void (*del)(void *, size_t));
+void				ft_lstiiter(t_lsti *lst, void (*f)(t_lsti *elem));
+void				ft_lstiadd(t_lsti **alst, t_lsti *new);
 
 int					ft_isspace(char c);
 void				ft_memswap(void **str1, void **str2, size_t len);
 void				ft_free(char ***s);
-void				ft_lstfree(t_list **tmp);
-void				ft_lstifree(t_lsti **tmp);
+void				ft_lstfree(t_list **tmp);//govno
+void				ft_lstifree(t_lsti **tmp);//jopa
 int					ft_lstcount(t_list *lst);
 int					ft_lsticount(t_lsti *lst);
+int					ft_strchri(const char *s, int c);
+char				*ft_strjoinfree(char *s1, char *s2);
 
 #endif

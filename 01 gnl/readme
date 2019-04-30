@@ -3,15 +3,30 @@
 #                                                         :::      ::::::::    #
 #    readme                                             :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/01 18:21:46 by hfalmer           #+#    #+#              #
-#    Updated: 2019/04/01 21:08:40 by hfalmer          ###   ########.fr        #
+#    Updated: 2019/04/30 00:37:49 by hfalmer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+DON'T FORGET TO PUT ALL SHIT IN THE MAKEFILE TY
+
+||| FUNC
 
 there are some functions for indexed lists))
 	tbh all t_lists' functions are t_lsti now)
 
 strdup == memcpy
 
+ft_strchri shows index of chat int the str
+
+ft_strjoinfree joins n frees fkn strings
+
+
+
+||| VAR
+
+tmpS is for temp strings
+
+tmpL -- for temp lists

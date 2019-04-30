@@ -3,28 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstifree.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 00:27:41 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/04/01 19:38:21 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/04/30 02:14:37 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstifree(t_lsti **tmp)
+void	ft_lstifree(t_lsti **lst)
 {
-	t_lsti *lst;
+	t_lsti *tmp;
 	t_lsti *t;
 
-	lst = *tmp;
-	while (lst)
+	tmp = *lst;
+	while (tmp)
 	{
 		if (lst->content)
-			free(lst->content);
+		{
+			ft_lstidel();
+		}
 		t = lst;
 		lst = lst->next;
-		free(t);
+		ft_free(t->content);
 	}
-	free(*tmp);
+	ft_free(*tmp);
 }

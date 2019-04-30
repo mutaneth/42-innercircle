@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/30 17:03:07 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/04/30 03:56:46 by hfalmer          ###   ########.fr       */
+/*   Created: 2019/04/30 02:25:06 by hfalmer           #+#    #+#             */
+/*   Updated: 2019/04/30 03:36:11 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "get_next_line.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <string.h>
 
-# include <stdio.h>
-# include <unistd.h>
-# include "libft/libft.h"
-# include <stdlib.h>
+int main(int ac, char **av)
+{
+	int fd;
+	char *line;
 
-# define BUFF_SIZE 13
-
-int	get_next_line(const int fd, char **line);
-
-#endif
+	if (ac == 1)
+		fd = 0;
+	else if (ac == 2)
+		fd = open(av[1], O_RDONLY);
+	else
+		return (2);
+	while (get_next_line(fd, &line) == 1)
+	{
+		ft_putendl(line);
+		free(line);
+	}
+	if (ac == 2)
+		close(fd);
+}

@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_lstcnt.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/30 17:03:07 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/04/30 03:56:46 by hfalmer          ###   ########.fr       */
+/*   Created: 2019/04/30 01:41:10 by hfalmer           #+#    #+#             */
+/*   Updated: 2019/04/30 03:54:16 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include "libft/libft.h"
-# include <stdlib.h>
+int	ft_lstcount(t_list *lst)
+{
+	int		i;
+	t_list	*tmpl;
 
-# define BUFF_SIZE 13
-
-int	get_next_line(const int fd, char **line);
-
-#endif
+	if (!lst)
+		return (0);
+	i = 1;
+	tmpl = lst;
+	while (tmpl->next)
+	{
+		i++;
+		tmpl = tmpl->next;
+	}
+	return (i);
+}

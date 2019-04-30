@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/30 17:03:07 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/04/30 03:56:46 by hfalmer          ###   ########.fr       */
+/*   Created: 2019/04/30 00:34:55 by hfalmer           #+#    #+#             */
+/*   Updated: 2019/04/30 03:53:09 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include "libft/libft.h"
-# include <stdlib.h>
+char	*ft_strjoinfree(char *s1, char *s2)
+{
+	char *tmps;
 
-# define BUFF_SIZE 13
-
-int	get_next_line(const int fd, char **line);
-
-#endif
+	tmps = ((char*)ft_strjoin((const char*)s1, (const char*)s2));
+	ft_strdel(&s1);
+	ft_strdel(&s2);
+	return (tmps);
+}
