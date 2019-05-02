@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 20:19:28 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/04/24 18:22:57 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/02 20:34:08 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ t_lsti	*ft_lstinew(void *cont, size_t cont_size, int index)
 	{
 		nlst->content = NULL;
 		nlst->content_size = 0;
-		nlst->index = 0;
 	}
 	else
 	{

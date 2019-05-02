@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 00:34:55 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/04/30 03:53:09 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/01 01:59:47 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char	*ft_strjoinfree(char *s1, char *s2)
 {
 	char *tmps;
 
-	tmps = ((char*)ft_strjoin((const char*)s1, (const char*)s2));
-	ft_strdel(&s1);
-	ft_strdel(&s2);
-	return (tmps);
+	tmps = s1;
+	s1 = ((char*)ft_strjoin((const char*)s1, (const char*)s2));
+	free(tmps);
+	return (s1);
 }

@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 20:49:59 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/04/30 02:03:25 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/01 03:04:27 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@ int	ft_strchri(const char *s, int c)
 {
 	size_t	i;
 
+	if (!s)
+		return (-1);
 	if (c == '\0')
 		return (ft_strlen(s));
 	i = 0;
-	while ((unsigned char)s[i])
+	while (s[i])
 	{
-		if ((unsigned char)s[i] == (unsigned char)c)
+		if (s[i] == c)
 			return (i);
 		else
 			i++;
 	}
-	return (0);
+	return (-1);
 }

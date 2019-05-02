@@ -6,41 +6,27 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/25 19:56:11 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/04/30 03:50:07 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/01 02:10:55 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static int		fd_check(t_lsti *lst, int fd)
+static t_lsti	*fd_find(t_lsti **lst, int fd)
 {
-	t_lsti *tmpl;
+	t_lsti	*tmpl;
 
-	tmpl = lst;
+	tmpl = *lst;
 	while (tmpl)
 	{
-		if (fd != tmpl->index)
-			tmpl = tmpl->next;
-		else
-			return (1);
+		if (tmpl->index == fd)
+			return (tmpl);
+		tmpl = tmpl->next;
 	}
-	return (0);
-//	return -1 in main gnl first IF
-}
-
-static t_lsti	*fd_find(t_lsti *lst, int fd)
-{
-	t_lsti *res;
-
-	res = lst;
-	while (res)
-	{
-		if (!fd_check(lst, fd))
-			res = res->next;
-		else
-			return (res);
-	}
-	return (NULL); //fkn gcc
+	tmpl = ft_lstinew((void*)"", 1, fd);
+	ft_lstiadd(lst, tmpl);
+	tmpl = *lst;
+	return (tmpl);
 }
 
 static int		gnl(void **str, char **line)
@@ -48,11 +34,11 @@ static int		gnl(void **str, char **line)
 	size_t	i;
 	char	*tmps;
 
-	if (!(i = ft_strchri(*str, 10)))
+	if (!(i = ft_strchri(*str, '\n')))
 		return (0);
-	if ((*line = ft_strsub(*str, 0, i)))
+	if ((*line = ft_strsub(*str, 0, (size_t)(i - 1))))
 	{
-		tmps = ft_strsub((const char*)str, i + 1, ft_strlen(*str) - (i + 1));
+		tmps = ft_strsub((const char*)str, (unsigned int)i, (size_t)(ft_strlen(*str) - i));
 		ft_memdel(str);
 		*str = tmps;
 		return (1);
@@ -72,9 +58,7 @@ int				get_next_line(int const fd, char **line)
 		return (-1);
 	if (!lst && (read(fd, &buf, BUFF_SIZE)))
 		ft_lstinew(buf, BUFF_SIZE + 1, fd);
-	if (!fd_check(lst, fd) && (read(fd, &buf, BUFF_SIZE)))
-		ft_lstiadd(&lst, ft_lstinew(buf, BUFF_SIZE + 1, fd));
-	tmpl = fd_find(lst, fd);
+	tmpl = fd_find(&lst, fd);
 	while (113)
 	{
 		if ((gnli = gnl(&tmpl->content, line)))
@@ -82,7 +66,7 @@ int				get_next_line(int const fd, char **line)
 		else if ((rd = read(fd, &buf, BUFF_SIZE)))
 		{
 			buf[rd] = '\0';
-			tmpl->content = ft_strjoinfree((char*)tmpl->content, buf);
+			tmpl->content = ft_strjoinfree((char*)tmpl->content, buf);//rejoin))))))))))))
 		}
 		else if (tmpl->content && *(char*)tmpl->content)
 		{

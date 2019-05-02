@@ -6,7 +6,7 @@
 #    By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/19 00:12:27 by hfalmer           #+#    #+#              #
-#    Updated: 2019/04/30 02:15:24 by hfalmer          ###   ########.fr        #
+#    Updated: 2019/05/02 18:55:50 by hfalmer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ SRC = 	ft_memset.c\
 		ft_lstiiter.c\
 		ft_lstiadd.c\
 		ft_strchri.c\
-		ft_strjoinfree.c\
+		ft_strrejoin.c\
 		ft_lstcnt.c\
 		ft_lsticnt.c
 
@@ -90,7 +90,7 @@ OUT = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME):
-		gcc $(FLG) $(INC) -c $(SRC)
+		gcc -g $(FLG) $(INC) -c $(SRC)
 		ar rc $(NAME) $(OUT)
 		ranlib $(NAME)
 
