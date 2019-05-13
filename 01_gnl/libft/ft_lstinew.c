@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 20:19:28 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/05/02 20:34:08 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/13 19:45:30 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ t_lsti	*ft_lstinew(void *cont, size_t cont_size, int index)
 {
 	t_lsti	*nlst;
 
-	if (!(nlst = (t_lsti *)malloc(sizeof(t_lsti))))
+	if (!(nlst = (t_lsti*)malloc(sizeof(t_lsti))))
 		return (NULL);
-	if (!cont || !cont_size)
+	if (!cont)
 	{
-		nlst->content = NULL;
+		nlst->content = ft_memalloc(1);
 		nlst->content_size = 0;
 	}
 	else
@@ -32,8 +32,8 @@ t_lsti	*ft_lstinew(void *cont, size_t cont_size, int index)
 		}
 		nlst->content = ft_memcpy(nlst->content, cont, cont_size);
 		nlst->content_size = cont_size;
-		nlst->index = index;
 	}
 	nlst->next = NULL;
+	nlst->index = index;
 	return (nlst);
 }

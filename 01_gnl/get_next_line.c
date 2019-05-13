@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/25 19:56:11 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/05/02 21:26:48 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/13 19:43:10 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,18 @@ static int		gnl(void **str, char **line)
 
 	if ((i = ft_strchri(*str, '\n')) < 0)
 		return (0);
-	if (((*line) = ft_strsub(*str, 0, i - 1)))
+	if (i == 0 || !*str)
+	{
+		*line = ft_strdup("");
+		if (*str)
+		{
+			tmps = ft_strsub((const char*)(*str), (unsigned int)i + 1, ft_strlen(*str) - i + 1);
+			ft_memdel(str);
+			*str = tmps;
+		}
+		return (1);
+	}
+	if (((*line) = ft_strsub(*str, 0, i)))
 	{
 		tmps = ft_strsub((const char*)(*str), (unsigned int)i + 1, ft_strlen(*str) - i + 1);
 		ft_memdel(str);
@@ -55,10 +66,10 @@ int				get_next_line(int const fd, char **line)
 
 	if (fd < 0 || read(fd, &buf, 0) < 0 || !line || BUFF_SIZE < 1)
 		return (-1);
-	if (!lst && (read(fd, &buf, BUFF_SIZE)))
-		lst = ft_lstinew(buf, BUFF_SIZE + 1, fd);
+	if (!lst)
+		lst = ft_lstinew(NULL, 1, fd); //chet strannoe?
 	tmpl = fd_find(&lst, fd);
-	while (113)
+	while (1337)
 	{
 		if ((gnli = gnl(&tmpl->content, line)) > 0)
 			return (1);
