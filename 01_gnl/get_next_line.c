@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/25 19:56:11 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/05/13 19:43:10 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/16 01:30:12 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static t_lsti	*fd_find(t_lsti **lst, int fd)
 {
 	t_lsti	*tmpl;
 
+	if (!(*lst))
+		*lst = ft_lstinew(NULL, 1, fd);
 	tmpl = *lst;
 	while (tmpl)
 	{
@@ -35,20 +37,9 @@ static int		gnl(void **str, char **line)
 
 	if ((i = ft_strchri(*str, '\n')) < 0)
 		return (0);
-	if (i == 0 || !*str)
+	if (((*line) = ft_strsub((const char*)*str, 0, i)))
 	{
-		*line = ft_strdup("");
-		if (*str)
-		{
-			tmps = ft_strsub((const char*)(*str), (unsigned int)i + 1, ft_strlen(*str) - i + 1);
-			ft_memdel(str);
-			*str = tmps;
-		}
-		return (1);
-	}
-	if (((*line) = ft_strsub(*str, 0, i)))
-	{
-		tmps = ft_strsub((const char*)(*str), (unsigned int)i + 1, ft_strlen(*str) - i + 1);
+		tmps = ft_strsub(*str, (unsigned int)i + 1, ft_strlen(*str) - i + 1);
 		ft_memdel(str);
 		*str = tmps;
 		return (1);
@@ -66,11 +57,8 @@ int				get_next_line(int const fd, char **line)
 
 	if (fd < 0 || read(fd, &buf, 0) < 0 || !line || BUFF_SIZE < 1)
 		return (-1);
-	if (!lst)
-		lst = ft_lstinew(NULL, 1, fd); //chet strannoe?
 	tmpl = fd_find(&lst, fd);
-	while (1337)
-	{
+	while (113)
 		if ((gnli = gnl(&tmpl->content, line)) > 0)
 			return (1);
 		else if ((rd = read(fd, &buf, BUFF_SIZE)))
@@ -86,5 +74,4 @@ int				get_next_line(int const fd, char **line)
 		}
 		else
 			return (0);
-	}
 }

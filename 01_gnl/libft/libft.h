@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 20:44:49 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/05/02 17:41:47 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/16 00:21:00 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ void				ft_lstiadd(t_lsti **alst, t_lsti *new);
 int					ft_isspace(char c);
 void				ft_memswap(void **str1, void **str2, size_t len);
 void				ft_free(char ***s);
-void				ft_lstfree(t_list **tmp);//govno
-void				ft_lstifree(t_lsti **tmp);//jopa
+void				ft_lstfree(t_list **tmp);
+void				ft_lstifree(t_lsti **tmp);
 int					ft_lstcount(t_list *lst);
 int					ft_lsticount(t_lsti *lst);
 int					ft_strchri(const char *s, int c);

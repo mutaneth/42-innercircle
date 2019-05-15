@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "gcc build active file",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-g",
+                "main.c", "get_next_line.c", "libft/libft.a",
+            ],
+            "options": {
+                "cwd": "/Users/hfalmer/01_inner_circle/gnl"
+            }
+        }
+    ],
+    "version": "2.0.0"
+}

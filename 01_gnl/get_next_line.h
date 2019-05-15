@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/30 17:03:07 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/05/12 21:28:39 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/16 01:16:28 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include "libft/libft.h"
 # include <stdlib.h>
 
-# define BUFF_SIZE 10
+# define BUFF_SIZE 1025
 
 int	get_next_line(const int fd, char **line);
 
