@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 20:44:49 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/05/16 00:21:00 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/17 02:48:21 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,6 @@ void				ft_lstifree(t_lsti **tmp);
 int					ft_lstcount(t_list *lst);
 int					ft_lsticount(t_lsti *lst);
 int					ft_strchri(const char *s, int c);
-char				*ft_strrejoin(char *s1, char *s2);
+char				*ft_strrejoin(char *s1, char *s2, int flg);
 
 #endif

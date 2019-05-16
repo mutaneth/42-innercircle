@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 02:25:06 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/05/12 19:54:39 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/16 03:50:39 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int main(int ac, char **av)
 		fd = open(av[1], O_RDONLY);
 	else
 		return (2);
-	while (get_next_line(fd, &line) == 1)
+	while (get_next_line(fd, &line) > 0)
 	{
-		ft_putendl(line);
+		// ft_putendl(line);
 		free(line);
 	}
 	if (ac == 2)

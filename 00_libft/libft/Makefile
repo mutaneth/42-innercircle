@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/19 00:12:27 by hfalmer           #+#    #+#              #
-#    Updated: 2019/03/15 00:30:54 by hfalmer          ###   ########.fr        #
+#    Updated: 2019/05/02 18:55:50 by hfalmer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,16 @@ SRC = 	ft_memset.c\
 		ft_strsplit.c\
 		ft_lstadd.c\
 		ft_free.c\
-		ft_freelst.c
+		ft_lstinew.c\
+		ft_lstimap.c\
+		ft_lstidel.c\
+		ft_lstidelone.c\
+		ft_lstiiter.c\
+		ft_lstiadd.c\
+		ft_strchri.c\
+		ft_strrejoin.c\
+		ft_lstcnt.c\
+		ft_lsticnt.c
 
 INC = -I ./
 OUT = $(SRC:.c=.o)
@@ -81,7 +90,7 @@ OUT = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME):
-		gcc $(FLG) $(INC) -c $(SRC)
+		gcc -g $(FLG) $(INC) -c $(SRC)
 		ar rc $(NAME) $(OUT)
 		ranlib $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 16:41:52 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/03/15 00:31:47 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/04/30 01:57:59 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	while (lst)
 	{
 		if (!(tmp->next = f(lst)))
-			ft_freelst(&tmp);
+			ft_lstfree(&tmp);
 		tmp = tmp->next;
 		lst = lst->next;
 	}

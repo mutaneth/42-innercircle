@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 20:44:49 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/03/15 00:31:24 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/17 02:48:21 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_lsti
+{
+	void			*content;
+	size_t			content_size;
+	int				index;
+	struct s_lsti	*next;
+}					t_lsti;
 
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
@@ -82,14 +90,24 @@ char				**ft_strsplit(char const *str, char w);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstadd(t_list **alst, t_list *new);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_lsti				*ft_lstinew(void *cont, size_t cont_size, int index);
+t_lsti				*ft_lstimap(t_lsti *lst, t_lsti *(*f)(t_lsti *elem));
+void				ft_lstidel(t_lsti **alst, void (*del)(void *, size_t));
+void				ft_lstidelone(t_lsti **alst, void (*del)(void *, size_t));
+void				ft_lstiiter(t_lsti *lst, void (*f)(t_lsti *elem));
+void				ft_lstiadd(t_lsti **alst, t_lsti *new);
 
 int					ft_isspace(char c);
 void				ft_memswap(void **str1, void **str2, size_t len);
-char				*ft_free(char ***s);
-void				ft_freelst(t_list **tmp);
+void				ft_free(char ***s);
+void				ft_lstfree(t_list **tmp);
+void				ft_lstifree(t_lsti **tmp);
+int					ft_lstcount(t_list *lst);
+int					ft_lsticount(t_lsti *lst);
+int					ft_strchri(const char *s, int c);
+char				*ft_strrejoin(char *s1, char *s2, int flg);
 
 #endif

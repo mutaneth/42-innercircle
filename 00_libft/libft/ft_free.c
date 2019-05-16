@@ -6,13 +6,13 @@
 /*   By: hfalmer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 23:43:34 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/03/14 23:47:26 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/04/01 19:59:41 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_free(char ***s)
+void	ft_free(char ***s)
 {
 	int i;
 
@@ -24,5 +24,4 @@ char	*ft_free(char ***s)
 		i++;
 	}
 	*s = NULL;
-	return (NULL);
 }

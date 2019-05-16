@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/25 19:56:11 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/05/16 01:30:12 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/17 02:47:24 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int				get_next_line(int const fd, char **line)
 		else if ((rd = read(fd, &buf, BUFF_SIZE)))
 		{
 			buf[rd] = '\0';
-			tmpl->content = ft_strrejoin((char*)tmpl->content, buf);
+			tmpl->content = ft_strrejoin((char*)tmpl->content, buf, -1);
 		}
 		else if (tmpl->content && *(char*)tmpl->content)
 		{
