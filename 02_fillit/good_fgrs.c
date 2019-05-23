@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 23:00:20 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/05/21 02:58:25 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/23 01:58:08 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int main(int ac, char **av)/* takes file with 19 good fgrs and turns them into i
 		sht = (char*)(fgr_line(fd));
 		if (fgrl_val(sht) != 1)
 		{
-			//use huevo, virubay;
+			//vse huevo, virubay;
 		}
 		fgr[i] = fgr_int(sht); //upya4ka
 		printf("%d\n", fgr[i]);

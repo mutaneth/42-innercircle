@@ -6,13 +6,13 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/26 21:12:29 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/05/21 02:24:58 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/05/21 15:53:33 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)// TODO
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
 	size_t	j;
