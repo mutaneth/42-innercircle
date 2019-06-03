@@ -1,0 +1,5 @@
+a) ifconfig | grep "broadcast" | awk '{print $6}'
+b) brd=$(ifconfig | grep "broadcast" | awk '{print $6}')
+echo $brd
+ping -c11 $brd
+arp -a | grep 'school' | awk '{print $2}' | cut -d "(" -f2 | rev | cut -d ")" -f2 | rev

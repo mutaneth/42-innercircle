@@ -1,0 +1,1 @@
+networksetup -getinfo wi-fi | grep 'Wi-Fi' | awk '{print $3}'
