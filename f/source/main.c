@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 16:33:24 by ddratini          #+#    #+#             */
-/*   Updated: 2019/07/19 03:47:07 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/07/19 20:48:25 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	build_f(t_fgr *r)
 	fgrlist = r;
 	flg = 2;
 	c = fgr_count(fgrlist);
-	flg = sqrt(c * 4);
+	flg = ft_sqrt(c * 4);
 	i = -1;
 	map = mapc(flg);
 	if (map)
@@ -99,6 +99,8 @@ int		main(int ac, char **av)
 	{
 		tmp = r;
 		build_f(r);
+		// free_fgr(r);
+		// free_fgr(tmp);
 		close(fd);
 	}
 	return (0);

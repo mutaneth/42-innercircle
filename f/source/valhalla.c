@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 06:29:03 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/07/19 06:49:17 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/07/19 20:28:59 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ t_fgr	*after_line(int fd)/* just check \n and \0 yuhoo and fill the fgr*/
 			fgr_push_back(&fgr, line, (char)i);
 	}
 	if (!line)
-		free_fgr(&fgr);
+		free_fgr(fgr);
 	return (fgr);
 }
 

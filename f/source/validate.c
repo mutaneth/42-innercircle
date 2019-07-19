@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 19:49:57 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/07/19 06:38:44 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/07/19 20:29:35 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,24 +58,20 @@ t_fgr	*mega_fgr_val(int fd)
 	return (ok_fgr);
 }
 
-void	free_fgr(t_fgr **fgr)
+void	free_fgr(t_fgr *fgr)
 {
 	t_fgr *tmp;
-	t_fgr *t;
 
 	if (fgr)
 	{
-		tmp = *fgr;
-		while (tmp)
+		while (fgr)
 		{
-			if (tmp->fgr_line)
-				free((void*)tmp->fgr_line);
-			t = tmp;
-			tmp = tmp->next;
-			t->next = NULL;
-			free(t);
+			tmp = fgr->next;
+			if (fgr->fgr_line)
+				free(fgr->fgr_line);
+			free(fgr);
+			fgr = tmp;
 		}
-		free(tmp);//		free(fgr);
 	}
 }
 

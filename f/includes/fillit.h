@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 03:02:14 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/07/19 06:14:34 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/07/19 20:35:14 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <fcntl.h>
 # include <stdio.h>/////
 # include "./libft/includes/libft.h"
-# include <math.h>//////
 
 typedef struct		s_fgr
 {
@@ -45,9 +44,9 @@ int					fgrl_xtra_01(char *fgr_line);
 int					ft_fgr_int(char *fgrl);
 int					int_check(t_fgr *fgr);
 t_fgr				*mega_fgr_val(int fd);
-void				free_fgr(t_fgr **fgr);
+void				free_fgr(t_fgr *fgr);
 
-// int					ft_sqrt
+int					ft_sqrt(int nb);
 int					fgr_count(t_fgr *fgrlist);
 char				**mapc(int flg);
 void				map_free(char **map, int fgc);// huita

@@ -62,3 +62,17 @@ char	**mapc(int flg)/* creates the minimal start map*/
 		free(map);
 	}
 }
+
+int		ft_sqrt(int nb)
+{
+	int i;
+
+	if (nb == 1)
+		return (0);
+	i = 0;
+	while (i * i < nb)
+		i++;
+	if (i * i == nb)
+		return (i);
+	return (0);
+}

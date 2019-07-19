@@ -6,7 +6,7 @@
 /*   By: hfalmer <hfalmer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 06:19:00 by hfalmer           #+#    #+#             */
-/*   Updated: 2019/07/19 06:27:45 by hfalmer          ###   ########.fr       */
+/*   Updated: 2019/07/19 20:44:08 by hfalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ void		print_map(char **map)
 
 	u = -1;
 	while (map[++u])
-		printf("%s\n", map[u]);
+	{
+		ft_putstr(map[u]);
+		ft_putchar('\n');
+	}
 }
 
 void		dot(char **map, t_fgr *fi)
