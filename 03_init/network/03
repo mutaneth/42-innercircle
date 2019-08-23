@@ -1,0 +1,2 @@
+# Identify the MAC address of the Wi-Fi card
+networksetup -getinfo wi-fi | grep 'Wi-Fi' | awk '{print $3}'

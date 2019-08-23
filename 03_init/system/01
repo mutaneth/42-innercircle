@@ -1,0 +1,4 @@
+# In what file can you find the installed version of your Debian?
+etc/issue
+or
+etc/debian_version

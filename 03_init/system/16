@@ -1,0 +1,6 @@
+# Find the service which makes it possible to run specific tasks following a regular
+# schedule
+crontab -l || -e
+Cronjobs are written in the following format:
+* * * * * /bin/execute/this/script.sh
+https://kvz.io/blog/2007/07/29/schedule-tasks-on-linux-using-crontab/

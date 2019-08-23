@@ -1,0 +1,17 @@
+clear
+for (( i=0; i < 10; i++ ))
+do
+	for file in $( ls src )
+	do
+		cat "./src/$file"
+		for (( j = 0; j < i; j++ ))
+		do
+			printf ' '
+		done
+		printf "\e[96m"
+		printf "$a We clear yoh cache! Please stand by\e[39m"
+		sleep 1
+		rm -rf ~/Library/*42_cache*
+		clear
+	done
+done

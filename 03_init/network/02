@@ -1,0 +1,9 @@
+# Identify and display the Ethernet interface characteristics:
+# (a) Identify broadcast address
+# (b) Identify all IP adresses which are part of the same subnet
+
+a) ifconfig | grep "broadcast" | awk '{print $6}'
+b) brd=$(ifconfig | grep "broadcast" | awk '{print $6}')
+echo $brd
+ping -c11 $brd
+arp -a | grep 'school' | awk '{print $2}' | cut -d "(" -f2 | rev | cut -d ")" -f2 | rev

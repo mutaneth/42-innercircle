@@ -1,0 +1,3 @@
+# Name the command that lists the partition tables of drives?
+fdisk -located
+# +sudo

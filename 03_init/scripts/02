@@ -1,0 +1,6 @@
+# Write a script which delete an ACTIVE user on the VM.
+pgrep -u username
+ps -fp $(pgrep -u username)
+killall -u username
+userdel -r username
+# +sudo
