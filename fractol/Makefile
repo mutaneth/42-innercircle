@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME := fractol
-FLAGS := -O3
+FLAGS := -Wall -Wextra -Werror -O3
 MLX := -L./minilibx_macos -lmlx -framework OpenGL -framework AppKit
 SRCS :=  src/main.c 
 LIB := -L./libft -lft -lm
